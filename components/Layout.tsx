@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { Github, MessageCircle, Menu, ChevronDown, Moon } from 'lucide-react'
+import { Github, MessageCircle, Menu, ChevronDown, Moon, Sun, Laptop } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -9,6 +9,13 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { useTheme } from 'next-themes'
 
 interface NavItem {
   title: string
@@ -32,6 +39,7 @@ const navItems: NavItem[] = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -68,10 +76,34 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Button variant="ghost" size="icon">
               <MessageCircle className="h-5 w-5" />
             </Button>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  {theme === 'light' ? <Sun className="h-5 w-5" /> : theme === 'dark' ? <Moon className="h-5 w-5" /> : <Laptop className="h-5 w-5" />}
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setTheme('light')}>
+                  <Sun className="mr-2 h-4 w-4" />
+                  <span>Light</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme('dark')}>
+                  <Moon className="mr-2 h-4 w-4" />
+                  <span>Dark</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme('system')}>
+                  <Laptop className="mr-2 h-4 w-4" />
+                  <span>System</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
           </div>
         </div>
       </header>
-      
+
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row">
         <aside className="hidden md:block w-64 pr-8">
           <nav className="space-y-4">
