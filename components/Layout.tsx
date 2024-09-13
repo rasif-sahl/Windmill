@@ -51,7 +51,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <Menu />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-gray-900">
+              <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-gray-900 bg-primary text-secondary">
                 <nav className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item) => (
                     <NavItem key={item.title} item={item} />
