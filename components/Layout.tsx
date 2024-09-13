@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { Github, MessageCircle, Menu, ChevronDown, Moon, Sun, Laptop } from 'lucide-react'
+import { MessageCircle, Menu, ChevronDown, Moon, Sun, Laptop } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -32,9 +32,7 @@ const navItems: NavItem[] = [
     children: [
       { title: 'Satori', href: '#' }
     ]
-  },
-  { title: 'About', href: '#' },
-  { title: 'Contact', href: '#' },
+  }
 ]
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -42,8 +40,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const { theme, setTheme } = useTheme()
 
   return (
-    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
-      <header className="border-b border-gray-800">
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <h1 className="text-xl font-bold">My Project</h1>
@@ -66,13 +64,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Input 
               type="search" 
               placeholder="Search documentation..." 
-              className="w-64 bg-gray-800 text-white placeholder-gray-400 border-gray-700"
+              className="w-64 bg-primary-default text-white placeholder-gray-400 border-border"
             />
-            <Link href="#" className="text-gray-300 hover:text-white">About</Link>
-            <Link href="#" className="text-gray-300 hover:text-white">Contact</Link>
-            <Button variant="ghost" size="icon">
-              <Github className="h-5 w-5" />
-            </Button>
+            <Link href="#" className="text-primary-default hover:text-brand-color">About</Link>
+            <Link href="#" className="text-primary-default hover:text-brand-color">Contact</Link>
+
             <Button variant="ghost" size="icon">
               <MessageCircle className="h-5 w-5" />
             </Button>
@@ -112,18 +108,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
         </aside>
+
         <main className="flex-1">{children}</main>
+        
         <aside className="hidden lg:block w-64 pl-8">
           <h2 className="text-lg font-semibold mb-4">On This Page</h2>
           <nav className="space-y-2">
-            <Link href="#what-is-nextra" className="block text-blue-400 hover:text-blue-300">What is Nextra?</Link>
-            <Link href="#documentation" className="block text-blue-400 hover:text-blue-300">Documentation</Link>
+            <Link href="#what-is-nextra" className="block text-brand-color hover:text-blue-300">What is Nextra?</Link>
+            <Link href="#documentation" className="block text-brand-color hover:text-blue-300">Documentation</Link>
           </nav>
         </aside>
       </div>
 
-      <footer className="border-t border-gray-800 mt-12 py-6 text-center text-gray-400">
-        <p>Last updated on December 2, 2022</p>
+      <footer className="border-t border-border mt-12 py-6 text-center text-para-color">
+        <p>Last updated on October 2, 2024</p>
       </footer>
     </div>
   )
@@ -145,7 +143,7 @@ function NavItem({ item }: { item: NavItem }) {
         {isOpen && (
           <div className="ml-4 mt-2 space-y-2">
             {item.children.map((child) => (
-              <Link key={child.title} href={child.href} className="block text-gray-300 hover:text-white">
+              <Link key={child.title} href={child.href} className="block text-primary-default hover:text-brand-color">
                 {child.title}
               </Link>
             ))}
@@ -156,73 +154,8 @@ function NavItem({ item }: { item: NavItem }) {
   }
 
   return (
-    <Link href={item.href} className="block text-gray-300 hover:text-white">
+    <Link href={item.href} className="block text-primary-default hover:text-brand-color">
       {item.title}
     </Link>
   )
 }
-
-
-
-
-
-// import { ReactNode } from 'react';
-
-// interface LayoutProps {
-//   children: ReactNode;
-// }
-
-// export default function Layout({ children }: LayoutProps) {
-//   return (
-//     <div className="min-h-screen flex bg-neutral-900 text-white">
-//       <Sidebar />
-//       <div className="flex-1 flex flex-col">
-//         <Header />
-//         <main className="p-6 flex-1">{children}</main>
-//       </div>
-//     </div>
-//   );
-// }
-
-// function Sidebar() {
-//   return (
-//     <aside className="w-64 bg-neutral-800 p-6">
-//       <h2 className="text-2xl font-semibold mb-6">Dashboard</h2>
-//       <nav>
-//         <ul>
-//           <li className="mb-4">
-//             <a href="#" className="text-neutral-400 hover:text-white">
-//               Overview
-//             </a>
-//           </li>
-//           <li className="mb-4">
-//             <a href="#" className="text-neutral-400 hover:text-white">
-//               Prologue
-//             </a>
-//           </li>
-//           <li className="mb-4">
-//             <a href="#" className="text-neutral-400 hover:text-white">
-//               Getting Started
-//             </a>
-//           </li>
-//           {/* Add more nav items here */}
-//         </ul>
-//       </nav>
-//     </aside>
-//   );
-// }
-
-// function Header() {
-//   return (
-//     <header className="bg-neutral-800 p-6 border-b border-neutral-700">
-//       <div className="flex justify-between items-center">
-//         <h1 className="text-xl font-semibold">Agon - Laravel Multipurpose Agency</h1>
-//         <div className="space-x-4">
-//           <button className="bg-neutral-700 p-2 rounded-full hover:bg-neutral-600">
-//             {/* Icons or links */}
-//           </button>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }

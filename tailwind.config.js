@@ -12,6 +12,7 @@ module.exports = {
 				'dark-text': '#E4E4E7',
 				'dark-border': '#3A3B3F',
 				'brand-color': '#6366F1',
+				'para-color': '#848484',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
