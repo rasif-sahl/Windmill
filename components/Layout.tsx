@@ -35,7 +35,13 @@ const navItems: NavItem[] = [
   }
 ]
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ 
+  children,
+  asideList,
+}: { 
+  children: React.ReactNode ,
+  asideList?: any[]
+}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
 
@@ -111,13 +117,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         <main className="flex-1">{children}</main>
         
-        <aside className="hidden lg:block w-64 pl-8">
-          <h2 className="text-lg font-semibold mb-4">On This Page</h2>
-          <nav className="space-y-2">
-            <Link href="#what-is-nextra" className="block text-brand-color hover:text-blue-300">What is Nextra?</Link>
-            <Link href="#documentation" className="block text-brand-color hover:text-blue-300">Documentation</Link>
-          </nav>
-        </aside>
+        {asideList && (
+          <>
+            <aside className="hidden lg:block w-64 pl-8">
+              <h2 className="text-lg font-semibold mb-4">On This Page</h2>
+              <nav className="space-y-2">
+                {asideList?.map((item) => {
+                  return (
+                    <div key={item?.href}>
+                      <Link href={item?.href} className="block text-brand-color hover:text-blue-300">{item?.text}</Link>
+                    </div>
+                  )
+                })}
+              </nav>
+            </aside>
+          </>
+        )}
       </div>
 
       <footer className="border-t border-border mt-12 py-6 text-center text-para-color">

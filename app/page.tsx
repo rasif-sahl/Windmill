@@ -1,8 +1,20 @@
 import Layout from '../components/Layout';
 
+const links = [
+  {
+    href: "#what-is-nextra",
+    text: "What is Nextra?",
+  },
+  {
+    href: "#documentation",
+    text: "Documentation",
+  },
+]
+
+
 export default function Home() {
   return (
-    <Layout>
+    <Layout asideList={links}>
       <section>
         <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
         <p className="text-para-color">
