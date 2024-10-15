@@ -35,21 +35,21 @@ function CodeEditor({ code: initialCode, language: initialLanguage = 'typescript
   }
 
   return (
-    <div className="w-full rounded-lg overflow-hidden bg-zinc-950 text-zinc-50">
-      <div className="flex justify-between items-center px-4 py-2 bg-zinc-900">
+    <div className="w-full rounded-lg overflow-hidden bg-background text-zinc-50">
+      <div className="flex justify-between items-center px-4 py-2 bg-background">
         <span className="text-sm text-zinc-400">Example Code</span>
         <div className="flex items-center space-x-2">
           <Button
             variant="ghost"
             size="icon"
             onClick={handleCopy}
-            className="h-8 w-8 text-zinc-400 hover:text-zinc-50"
+            className="h-8 w-8 text-zinc-400 hover:text-zinc-700"
           >
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
           </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="h-8 text-zinc-400 hover:text-zinc-50">
+              <Button variant="ghost" size="sm" className="h-8 text-zinc-400 hover:text-zinc-700">
                 {language === 'typescript' ? 'TS' : 'JS'}
                 <ChevronDown className="ml-1 h-4 w-4" />
               </Button>
@@ -89,7 +89,7 @@ function CodeEditor({ code: initialCode, language: initialLanguage = 'typescript
 
 export default function CodePreviewer({ code, component, language = 'typescript' }: CodePreviewerProps) {
   return (
-    <div className="w-full max-w-3xl mx-auto rounded-lg border border-gray-200 bg-white">
+    <div className="w-full max-w-3xl mx-auto rounded-lg border border-gray-200 bg-background">
       <Tabs defaultValue="preview" className="w-full">
         <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
           <TabsList>
@@ -98,7 +98,7 @@ export default function CodePreviewer({ code, component, language = 'typescript'
           </TabsList>
         </div>
         <TabsContent value="preview" className="p-4">
-          <div className="border rounded-md p-4 bg-white">
+          <div className="border rounded-md p-4 bg-background">
             {component}
           </div>
         </TabsContent>
