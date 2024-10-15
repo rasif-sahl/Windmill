@@ -25,14 +25,131 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { title: 'Introduction', href: '#' },
-  { title: 'Another Page', href: '#' },
+  { title: 'Installation', href: '#' },
   { 
-    title: 'Advanced (A Folder)', 
+    title: 'Components', 
     href: '#',
     children: [
-      { title: 'Satori', href: '#' }
+      { title: 'Button', href: '#' },
+      { title: 'Input', href: '#' },
+      { title: 'TextField', href: '#' },
+      { title: 'CheckBox', href: '#' },
+      { title: 'RadioButton', href: '#' },
+      { title: 'Dropdown', href: '#' },
+      { title: 'Select', href: '#' },
+      { title: 'Modal/Popup', href: '#' },
+      { title: 'Tooltip', href: '#' },
+      { title: 'Pagination', href: '#' },
+      { title: 'Alert/Notification', href: '#' },
+      { title: 'Loader/Spinner', href: '#' },
+      { title: 'Tab Navigation', href: '#' },
+      { title: 'Accordion', href: '#' },
     ]
-  }
+  },
+  { 
+    title: 'Product and Catalog', 
+    href: '#',
+    children: [
+      { title: 'ProductCard', href: '#' },
+      { title: 'ProductCarousel', href: '#' },
+      { title: 'ProductImageGallery', href: '#' },
+      { title: 'ProductPrice', href: '#' },
+      { title: 'ProductReviews', href: '#' },
+      { title: 'ProductFilters', href: '#' },
+      { title: 'ProductVariantSelector', href: '#' },
+      { title: 'ProductGrid', href: '#' },
+      { title: 'ProductList', href: '#' },
+      { title: 'CategoryMenu', href: '#' },
+      { title: 'ProductBadge', href: '#' },
+    ]
+  },
+  { 
+    title: 'Cart and Checkout', 
+    href: '#',
+    children: [
+      { title: 'CartIcon', href: '#' },
+      { title: 'CartItem', href: '#' },
+      { title: 'CartSummary', href: '#' },
+      { title: 'CartPage', href: '#' },
+      { title: 'CheckoutForm', href: '#' },
+      { title: 'OrderSummary', href: '#' },
+      { title: 'PaymentMethods', href: '#' },
+    ]
+  },
+  { 
+    title: 'User Account', 
+    href: '#',
+    children: [
+      { title: 'LoginForm', href: '#' },
+      { title: 'SignupForm', href: '#' },
+      { title: 'UserProfile', href: '#' },
+      { title: 'AddressBook', href: '#' },
+      { title: 'Wishlist', href: '#' },
+      { title: 'OrderHistory', href: '#' },
+    ]
+  },
+  { 
+    title: 'Navigation', 
+    href: '#',
+    children: [
+      { title: 'Header', href: '#' },
+      { title: 'Footer', href: '#' },
+      { title: 'Navbar', href: '#' },
+      { title: 'Breadcrumb', href: '#' },
+      { title: 'SearchBar', href: '#' },
+      { title: 'Sidebar', href: '#' },
+      { title: 'MegaMenu', href: '#' },
+    ]
+  },
+  { 
+    title: 'Promotional Components', 
+    href: '#',
+    children: [
+      { title: 'Banner', href: '#' },
+      { title: 'HeroSection', href: '#' },
+      { title: 'DiscountBadge', href: '#' },
+      { title: 'NewsletterSubscription', href: '#' },
+    ]
+  },
+  { 
+    title: 'Miscellaneous Components', 
+    href: '#',
+    children: [
+      { title: 'RatingStars', href: '#' },
+      { title: 'Breadcrumbs', href: '#' },
+      { title: 'FAQAccordion', href: '#' },
+      { title: 'SocialMediaIcons', href: '#' },
+      { title: 'CookieConsent', href: '#' },
+      { title: 'SearchResults', href: '#' },
+      { title: 'Tag', href: '#' },
+      { title: 'ErrorPage', href: '#' },
+      { title: 'NoItemsFound', href: '#' },
+      { title: 'BackToTopButton', href: '#' },
+    ]
+  },
+  { 
+    title: 'Admin and Management', 
+    href: '#',
+    children: [
+      { title: 'DashboardStats', href: '#' },
+      { title: 'ProductManagementTable', href: '#' },
+      { title: 'OrderManagementTable', href: '#' },
+      { title: 'UserManagementTable', href: '#' },
+      { title: 'InventoryManagement', href: '#' },
+      { title: 'Reports', href: '#' },
+    ]
+  },
+  { 
+    title: 'Tips', 
+    href: '#',
+    children: [
+      { title: 'Product Page ', href: '#' },
+      { title: 'Product List Page', href: '#' },
+      { title: 'User & Account', href: '#' },
+      { title: 'Checkout & Cart', href: '#' },
+      { title: 'UI & General Components:', href: '#' },
+    ]
+  },
 ]
 
 export default function Layout({ 
@@ -50,7 +167,7 @@ export default function Layout({
       <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-bold">My Project</h1>
+            <h1 className="text-xl font-bold">Wind Mill</h1>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
@@ -121,7 +238,7 @@ export default function Layout({
           <>
             <aside className="hidden lg:block w-64 pl-8">
               <h2 className="text-lg font-semibold mb-4">On This Page</h2>
-              <nav className="space-y-2">
+              <nav className="space-y-4">
                 {asideList?.map((item) => {
                   return (
                     <div key={item?.href}>
@@ -129,6 +246,7 @@ export default function Layout({
                     </div>
                   )
                 })}
+                <h2 className="text-lg font-semibold mb-4">Animated Components</h2>
               </nav>
             </aside>
           </>
@@ -150,15 +268,15 @@ function NavItem({ item }: { item: NavItem }) {
       <div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-between w-full text-left"
+          className="flex items-center justify-between w-full text-left text-[15px] leading-8 font-medium"
         >
           {item.title}
           <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'transform rotate-180' : ''}`} />
         </button>
         {isOpen && (
-          <div className="ml-4 mt-2 space-y-2">
+          <div className="ml-4 mt-2 space-y-4">
             {item.children.map((child) => (
-              <Link key={child.title} href={child.href} className="block text-primary-default hover:text-brand-color">
+              <Link key={child.title} href={child.href} className="block text-gray-500 hover:text-brand-color">
                 {child.title}
               </Link>
             ))}
@@ -169,7 +287,7 @@ function NavItem({ item }: { item: NavItem }) {
   }
 
   return (
-    <Link href={item.href} className="block text-primary-default hover:text-brand-color">
+    <Link href={item.href} className="block text-primary-default hover:text-brand-color text-[15px] leading-8 font-medium">
       {item.title}
     </Link>
   )
