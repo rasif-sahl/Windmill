@@ -176,7 +176,7 @@ export default function Layout({
                   <Menu />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-gray-900 bg-primary text-secondary">
+              <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-gray-900 bg-primary text-secondary h-screen overflow-y-auto">
                 <nav className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item) => (
                     <NavItem key={item.title} item={item} />
