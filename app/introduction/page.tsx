@@ -1,4 +1,3 @@
-import CodeEditor from '@/components/codeEditor';
 import Layout from '@/components/Layout';
 import CodePreviewer from '@/components/codePreview';
 import { Button } from '@/components/ui/button';

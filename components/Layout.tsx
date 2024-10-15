@@ -167,7 +167,9 @@ export default function Layout({
       <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-bold">Wind Mill</h1>
+            <h1 className="text-xl font-bold">
+              <Link href="/"> Wind Mill</Link>
+            </h1>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
