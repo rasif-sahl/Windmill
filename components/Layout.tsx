@@ -167,7 +167,7 @@ export default function Layout({
       <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-bold">My Project</h1>
+            <h1 className="text-xl font-bold">Wind Mill</h1>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
@@ -267,15 +267,15 @@ function NavItem({ item }: { item: NavItem }) {
       <div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-between w-full text-left"
+          className="flex items-center justify-between w-full text-left text-[15px] leading-8 font-medium"
         >
           {item.title}
           <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'transform rotate-180' : ''}`} />
         </button>
         {isOpen && (
-          <div className="ml-4 mt-2 space-y-2">
+          <div className="ml-4 mt-2 space-y-4">
             {item.children.map((child) => (
-              <Link key={child.title} href={child.href} className="block text-primary-default hover:text-brand-color">
+              <Link key={child.title} href={child.href} className="block text-gray-500 hover:text-brand-color">
                 {child.title}
               </Link>
             ))}
@@ -286,7 +286,7 @@ function NavItem({ item }: { item: NavItem }) {
   }
 
   return (
-    <Link href={item.href} className="block text-primary-default hover:text-brand-color">
+    <Link href={item.href} className="block text-primary-default hover:text-brand-color text-[15px] leading-8 font-medium">
       {item.title}
     </Link>
   )
