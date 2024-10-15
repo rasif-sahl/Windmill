@@ -238,7 +238,7 @@ export default function Layout({
           <>
             <aside className="hidden lg:block w-64 pl-8">
               <h2 className="text-lg font-semibold mb-4">On This Page</h2>
-              <nav className="space-y-2">
+              <nav className="space-y-4">
                 {asideList?.map((item) => {
                   return (
                     <div key={item?.href}>
@@ -246,6 +246,7 @@ export default function Layout({
                     </div>
                   )
                 })}
+                <h2 className="text-lg font-semibold mb-4">Animated Components</h2>
               </nav>
             </aside>
           </>
