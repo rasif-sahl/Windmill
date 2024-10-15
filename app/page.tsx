@@ -1,5 +1,7 @@
 import CodeEditor from '@/components/codeEditor';
-import Layout from '../components/Layout';
+import Layout from '@/components/Layout';
+import CodePreviewer from '@/components/codePreview';
+import { Button } from '@/components/ui/button';
 
 const links = [
   {
@@ -12,16 +14,18 @@ const links = [
   },
 ]
 
-const exampleCode = `
-import React from 'react';
+const ExampleComponent = () => (
+  <Button>Hello, World!</Button>
+)
 
-function Example() {
-  return <div>Hello, World!</div>;
-}
+const exampleCodePreviewer = `
+  import { Button } from "@/components/ui/button"
 
-export default Example;
+  export const ExampleComponent = () => (
+    <Button>Hello, World!</Button>
+  )
 `
-
+  
 export default function Home() {
   return (
     <Layout asideList={links}>
@@ -30,8 +34,14 @@ export default function Home() {
         <p className="text-para-color mb-4">
           Agon is a Laravel Multipurpose Agency script using Laravel 10.x. It’s a product built on Botble CMS.
         </p>
-        {/* Add more content here */}
-        <CodeEditor code={exampleCode}/>
+        {/* The Code Editor */}
+        {/* <CodeEditor code={exampleCode}/> */}
+
+        {/* Code Editor and Previewer */}
+        <CodePreviewer
+              code={exampleCodePreviewer}
+              component={<ExampleComponent />}
+        />
       </section>
     </Layout>
   );
