@@ -25,14 +25,131 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { title: 'Introduction', href: '#' },
-  { title: 'Another Page', href: '#' },
+  { title: 'Installation', href: '#' },
   { 
-    title: 'Advanced (A Folder)', 
+    title: 'Components', 
     href: '#',
     children: [
-      { title: 'Satori', href: '#' }
+      { title: 'Button', href: '#' },
+      { title: 'Input', href: '#' },
+      { title: 'TextField', href: '#' },
+      { title: 'CheckBox', href: '#' },
+      { title: 'RadioButton', href: '#' },
+      { title: 'Dropdown', href: '#' },
+      { title: 'Select', href: '#' },
+      { title: 'Modal/Popup', href: '#' },
+      { title: 'Tooltip', href: '#' },
+      { title: 'Pagination', href: '#' },
+      { title: 'Alert/Notification', href: '#' },
+      { title: 'Loader/Spinner', href: '#' },
+      { title: 'Tab Navigation', href: '#' },
+      { title: 'Accordion', href: '#' },
     ]
-  }
+  },
+  { 
+    title: 'Product and Catalog', 
+    href: '#',
+    children: [
+      { title: 'ProductCard', href: '#' },
+      { title: 'ProductCarousel', href: '#' },
+      { title: 'ProductImageGallery', href: '#' },
+      { title: 'ProductPrice', href: '#' },
+      { title: 'ProductReviews', href: '#' },
+      { title: 'ProductFilters', href: '#' },
+      { title: 'ProductVariantSelector', href: '#' },
+      { title: 'ProductGrid', href: '#' },
+      { title: 'ProductList', href: '#' },
+      { title: 'CategoryMenu', href: '#' },
+      { title: 'ProductBadge', href: '#' },
+    ]
+  },
+  { 
+    title: 'Cart and Checkout', 
+    href: '#',
+    children: [
+      { title: 'CartIcon', href: '#' },
+      { title: 'CartItem', href: '#' },
+      { title: 'CartSummary', href: '#' },
+      { title: 'CartPage', href: '#' },
+      { title: 'CheckoutForm', href: '#' },
+      { title: 'OrderSummary', href: '#' },
+      { title: 'PaymentMethods', href: '#' },
+    ]
+  },
+  { 
+    title: 'User Account', 
+    href: '#',
+    children: [
+      { title: 'LoginForm', href: '#' },
+      { title: 'SignupForm', href: '#' },
+      { title: 'UserProfile', href: '#' },
+      { title: 'AddressBook', href: '#' },
+      { title: 'Wishlist', href: '#' },
+      { title: 'OrderHistory', href: '#' },
+    ]
+  },
+  { 
+    title: 'Navigation', 
+    href: '#',
+    children: [
+      { title: 'Header', href: '#' },
+      { title: 'Footer', href: '#' },
+      { title: 'Navbar', href: '#' },
+      { title: 'Breadcrumb', href: '#' },
+      { title: 'SearchBar', href: '#' },
+      { title: 'Sidebar', href: '#' },
+      { title: 'MegaMenu', href: '#' },
+    ]
+  },
+  { 
+    title: 'Promotional Components', 
+    href: '#',
+    children: [
+      { title: 'Banner', href: '#' },
+      { title: 'HeroSection', href: '#' },
+      { title: 'DiscountBadge', href: '#' },
+      { title: 'NewsletterSubscription', href: '#' },
+    ]
+  },
+  { 
+    title: 'Miscellaneous Components', 
+    href: '#',
+    children: [
+      { title: 'RatingStars', href: '#' },
+      { title: 'Breadcrumbs', href: '#' },
+      { title: 'FAQAccordion', href: '#' },
+      { title: 'SocialMediaIcons', href: '#' },
+      { title: 'CookieConsent', href: '#' },
+      { title: 'SearchResults', href: '#' },
+      { title: 'Tag', href: '#' },
+      { title: 'ErrorPage', href: '#' },
+      { title: 'NoItemsFound', href: '#' },
+      { title: 'BackToTopButton', href: '#' },
+    ]
+  },
+  { 
+    title: 'Admin and Management', 
+    href: '#',
+    children: [
+      { title: 'DashboardStats', href: '#' },
+      { title: 'ProductManagementTable', href: '#' },
+      { title: 'OrderManagementTable', href: '#' },
+      { title: 'UserManagementTable', href: '#' },
+      { title: 'InventoryManagement', href: '#' },
+      { title: 'Reports', href: '#' },
+    ]
+  },
+  { 
+    title: 'Tips', 
+    href: '#',
+    children: [
+      { title: 'Product Page ', href: '#' },
+      { title: 'Product List Page', href: '#' },
+      { title: 'User & Account', href: '#' },
+      { title: 'Checkout & Cart', href: '#' },
+      { title: 'UI & General Components:', href: '#' },
+    ]
+  },
 ]
 
 export default function Layout({ 
