@@ -167,14 +167,16 @@ export default function Layout({
       <header className="border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-bold">Wind Mill</h1>
+            <h1 className="text-xl font-bold">
+              <Link href="/"> Wind Mill</Link>
+            </h1>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
                   <Menu />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-gray-900 bg-primary text-secondary">
+              <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-gray-900 bg-primary text-secondary h-screen overflow-y-auto">
                 <nav className="flex flex-col space-y-4 mt-8">
                   {navItems.map((item) => (
                     <NavItem key={item.title} item={item} />

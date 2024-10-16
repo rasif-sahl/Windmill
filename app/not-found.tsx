@@ -16,11 +16,11 @@ export default function NotFound() {
             <AlertCircle className="h-4 w-4" />
             <AlertTitle>Error</AlertTitle>
             <AlertDescription>
-              The page you're looking for doesn't exist.
+              The page you are looking for does not  exist.
             </AlertDescription>
           </Alert>
           <p className="text-center text-muted-foreground">
-            Oops! It seems you've ventured into uncharted territory.
+            Oops! It seems you have ventured into uncharted territory.
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">

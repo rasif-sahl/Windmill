@@ -1,48 +1,38 @@
-import CodeEditor from '@/components/codeEditor';
-import Layout from '@/components/Layout';
-import CodePreviewer from '@/components/codePreview';
-import { Button } from '@/components/ui/button';
+"use client";
+import React from 'react'
+import { Button } from "@/components/ui/button"
+import { Moon, Sun, Laptop } from 'lucide-react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { useTheme } from 'next-themes'
+import HomeBanner from '@/components/custom/homePage/banner';
+import HomeFeatured from '@/components/custom/homePage/featured';
+import HomeWhyUs from '@/components/custom/homePage/whyUs';
+import HomeGetStarted from '@/components/custom/homePage/getStarted';
+import HomeUsers from '@/components/custom/homePage/user';
+import MainFooter from '@/components/custom/footer';
+import MainNavBar from '@/components/custom/navBar';
 
-const links = [
-  {
-    href: "#what-is-nextra",
-    text: "What is Nextra?",
-  },
-  {
-    href: "#documentation",
-    text: "Documentation",
-  },
-]
+export default function HomePage() {
+  const { theme, setTheme } = useTheme()
 
-const ExampleComponent = () => (
-  <Button>Hello, World!</Button>
-)
-
-const exampleCodePreviewer = `
-  import { Button } from "@/components/ui/button"
-
-  export const ExampleComponent = () => (
-    <Button>Hello, World!</Button>
-  )
-`
-  
-export default function Home() {
   return (
-    <Layout asideList={links}>
-      <section>
-        <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
-        <p className="text-para-color mb-4">
-          Agon is a Laravel Multipurpose Agency script using Laravel 10.x. It’s a product built on Botble CMS.
-        </p>
-        {/* The Code Editor */}
-        {/* <CodeEditor code={exampleCode}/> */}
+    <div className="min-h-screen bg-background text-foreground">
+      <MainNavBar/>
 
-        {/* Code Editor and Previewer */}
-        <CodePreviewer
-              code={exampleCodePreviewer}
-              component={<ExampleComponent />}
-        />
-      </section>
-    </Layout>
-  );
+      <div className="container mx-auto">
+        <HomeBanner/>
+        <HomeFeatured/>
+        <HomeWhyUs/>
+        <HomeGetStarted/>
+        <HomeUsers/>
+      </div>
+
+      <MainFooter/>
+    </div>
+  )
 }
