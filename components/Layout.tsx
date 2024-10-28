@@ -24,13 +24,13 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { title: 'Introduction', href: '#' },
+  { title: 'Introduction', href: '/introduction' },
   { title: 'Installation', href: '#' },
   { 
     title: 'Components', 
     href: '#',
     children: [
-      { title: 'Button', href: '#' },
+      { title: 'Button', href: '/components/button' },
       { title: 'Input', href: '#' },
       { title: 'TextField', href: '#' },
       { title: 'CheckBox', href: '#' },
